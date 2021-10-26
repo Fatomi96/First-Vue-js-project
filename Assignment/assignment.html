@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Assignment</title>
+     <link rel="stylesheet" href="./assignment.css">
+</head>
+<body>
+     <div id="assignment">
+          <div>
+               <h1 v-if= "currentTime < 12" class="welcome">Wecome to my space, it's {{fullTime}} am</h1>
+               <h1 v-else-if= "13 < currentTime < 18">Good Afternoon, it's {{fullTime}} pm</h1>
+               <h1 v-else-if= "18 < currentTime < 24">Good Night, it's {{fullTime}} pm</h1>
+               <h1 v-else>Opps! I don't know what the time is</h1>
+          </div>
+          
+          <div class="box">
+               <div class="about_me">
+                    <h2>About me</h2>
+                    <div class="about_text">
+                         <p>My name is <b>{{ formData.name }}</b> and i am so glad to meet you. Here is my address: <b>{{ formData.address }}</b> and my occupation is <b>{{ formData.occupation }}</b>.</p>
+                         <p>To know more about me, you can click the buttons below.</p>  
+                    </div>
+     
+                    <div class="more_details">
+                         <button v-on:click="favFood" class="btn1">My favourite foods</button>
+                         <ol class="fav_food" v-if="food_visibility">
+                              <li v-for="food in foods">{{ food }}</li>               
+                         </ol>
+                         <button v-on:click="favCountry">My favourite countries</button>
+                         <ol class="top_countries" v-if="country_visibility">
+                              <li v-for="country in countries">{{ country }}</li>               
+                         </ol>
+                    </div>
+               </div>
+     
+               <div class="form_container">
+                    <h3>Join my space</h3>
+                    <form>
+                         <div class="form_input">
+                              <label for="visitorName">Name</label><br>
+                              <input class="text" type="text" v-model="formData.visitorName">
+                         </div>
+     
+                         <div class="form_input">
+                              <label for="userName">Username</label><br>
+                              <input class="text"  type="text" v-model="formData.userName">
+                         </div>
+     
+                         <div class="form_input">
+                              <label for="email">Email</label>
+                              <input class="text1"  type="email" placeholder="yourmail@domain.com" v-model="formData.email">
+                         </div>
+     
+                         <div class="form_input">
+                              <label for="phoneNumber">Phone Number</label><br>
+                              <input class="text"  type="text" v-model="formData.phoneNumber">
+                         </div>
+                         <button @click.prevent="submit" class="btn2">Submit</button>
+                    </form>
+               </div>
+          </div>
+          
+
+          <div class="table">
+               <table style="width:100%">
+                    <tr>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Phone Number</th>
+                      
+                    </tr>
+                    <tr v-for="data in tableData">
+                      <td>{{ data.visitorName }}</td>
+                      <td>{{ data.userName }}</td>
+                      <td>{{ data.email }}</td>
+                      <td>{{ data.phoneNumber }}</td>
+                    </tr>
+                  </table>
+          </div>
+             
+     </div>
+                    
+</body>
+     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>     
+     <script src="./assignment.js"></script>
+</html>

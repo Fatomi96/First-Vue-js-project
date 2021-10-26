@@ -1,0 +1,41 @@
+.form_container {
+     max-width: 300px;
+     margin: 30px auto;
+     padding: 30px;
+     box-shadow: 10px 10px 5px 0px rgb(145, 145, 240);
+     -webkit-box-shadow: 10px 10px 5px 0px rgb(146, 146, 253);
+     -moz-box-shadow: 10px 10px 5px 0px rgb(115, 115, 236);
+     border-radius: 20px;
+     border:1px solid rgb(80, 80, 228)
+}
+
+.form_container h3 {
+     color: rgb(103, 90, 223);
+     margin-left: 95px;
+}
+
+.form_input {
+     display: flex;
+     flex-direction: column;
+     margin-top: 15px;
+}
+
+.form_input input {
+     margin-top: 10px;
+     padding: 10px 15px;
+     border:1px solid rgb(100, 92, 224);
+}
+
+button {
+     background: rgb(73, 73, 230);
+     border: 1px solid rgb(32, 32, 172);
+     color: white;
+     padding: 10px 20px;
+     border-radius: 15px;
+     margin-top: 20px;
+     cursor: pointer;
+}
+
+table, th, td {
+     border:1px solid black;
+   }
